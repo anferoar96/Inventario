@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block contenido %} 
+<body>
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form action="" method="POST" novalidate>
+                {{ formulario.hidden_tag() }} 
+                <h1>Cambiar  contraseña</h1>
+                <p>Ingrese su nueva contraseña.</p>
+                <div class="row">
+                    <label for="txtPassword2" class="col-sm-4 form-label">Contraseña:</label>
+                    <div class="col-sm-6">
+                        {{formulario.contra(class="form-control",id="txtPassword2")}}
+                        {% for error in formulario.contra.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <label for="txtPassword3" class="col-sm-4 form-label">Repita contraseña:</label>
+                    <div class="col-sm-6">
+                        {{formulario.contra2(class="form-control",id="txtPassword3")}}
+                        {% for error in formulario.contra2.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
+                    </div>
+                </div>
+                {{formulario.submit(class="btn btn-outline-success" ,id="btnReseteo")}}
+                
+            </form>
+        </div>
+    </div>
+{% endblock %}

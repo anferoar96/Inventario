@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block contenido %} 
+<body>
+    <div class="container">
+        <div class="form-container sign-in-container">
+            <form action="" method="POST" novalidate>
+                {{ form.hidden_tag() }} 
+                <h1>Recuperar contraseña</h1>
+                <p>Ingrese su correo electrónico para recibir una nueva contraseña.</p>
+                <div class="row">
+                    <label for="txtCorreo" class="col-sm-3 form-label">Correo Electrónico:</label>
+                    <div class="col-sm-7">
+                        {{form.correo(class="form-control",id="txtCorreo",placeholder="ejemplo@ejemplo.com")}}
+                        {% for error in form.correo.errors %}
+                            <span style="color: red;">{{ error }}</span><br>
+                        {% endfor %}
+                    </div>
+                </div>
+                {{form.enviar(class="btn btn-outline-success" ,id="btnRecuperar")}}
+            </form>
+        </div>
+    </div>
+{% endblock %}

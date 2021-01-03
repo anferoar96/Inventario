@@ -1,0 +1,12 @@
+<p>Hola {{ usuario }},</p>
+<p>
+    Para cambiar la contraseña has
+    <a href="{{ url_for('reset', token=token, _external=True) }}">
+        click aqui
+    </a>.
+</p>
+<p>Tambien puedes copiar el siguiente link en la barra de navegación</p>
+<p>{{ url_for('reset', token=token, _external=True) }}</p>
+<p>Si no has requerido cambio de contraseña, ignora este mensaje.</p>
+<p>Atentamente,</p>
+<p>Inventario T3</p>
